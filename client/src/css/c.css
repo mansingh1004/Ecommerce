@@ -1,0 +1,23 @@
+.navbar{
+    background-color: rgb(72, 241, 151);
+
+}
+
+.navbarinput{
+    background-color: white;
+    border-color: white;
+    color:black;
+    width: 35vw;
+    height: 2vw;
+   margin-top: .5vw;
+}
+
+
+/* Home page */
+
+#homedata
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
