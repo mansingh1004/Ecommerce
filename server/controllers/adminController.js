@@ -1,5 +1,6 @@
 const AdminModel=require("../models/adminModel")
 const ProductModel=require("../models/productModel")
+const OrderModel=require("../models/orderModel");
 const multer=require("multer");
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary=require("../cloudinary")
@@ -68,12 +69,28 @@ const AdminLogin=async(req,res)=>{
    
 }
 
+const Order=async(req, res)=>{
+    const Order= await OrderModel.find();
+    res.status(200).send(Order);
+}
 
+
+const  OrderDelete=async(req,res)=>{
+  const { id } =req.query;
+    const Del=  await  OrderModel.findByIdAndDelete(id)
+
+  res.send({msg:"data deleted",Del:Del})
+
+}
 
 
 
 
 module.exports={
     AdminLogin,
-    ProductSave
+    ProductSave,
+    Order,
+    OrderDelete
 }
+
+

@@ -10,6 +10,8 @@ const AdminDashboard=()=>{
           
 <Nav defaultActiveKey="/home" className="flex-column">
       <Nav.Link  as={Link} to="uploadproduct">UploadProduct</Nav.Link>
+            <Nav.Link  as={Link} to="customerorder">Order</Nav.Link>
+
   
     </Nav>
 
@@ -25,7 +27,7 @@ const AdminDashboard=()=>{
         <div className="header">
           <h1>Dashboard Overview</h1>
           <div className="user-profile">
-            <img src="https://via.placeholder.com/40" alt="User" />
+          
             <span>Admin User</span>
           </div>
         </div>

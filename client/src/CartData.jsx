@@ -2,12 +2,18 @@ import { useSelector, useDispatch } from "react-redux";
 import Table from 'react-bootstrap/Table';
 import { FaPlusCircle } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
-import { dataIncrease, dataDecrease } from "./cartSlice";
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
+import { dataIncrease, dataDecrease,itemRemove } from "./cartSlice";
 const CartData=()=>{
     const cartData= useSelector(state=>state.mycart.cart);
     const dispatch= useDispatch();
+const navigate=useNavigate();
+    let TotalAmount=0;
 
      const ans= cartData.map((key)=>{
+
+      TotalAmount+=key.price*key.qnty
         return(
             <>
              <tr>
@@ -22,7 +28,10 @@ const CartData=()=>{
                     <FaMinusCircle onClick={()=>{dispatch(dataDecrease({id:key.id}))}} />
                    </td>
                   <td> {key.qnty * key.price} </td>
-                  
+                  <td>
+ <Button variant="danger"  onClick={()=>{dispatch(itemRemove({id:key.id}))}}>Remove</Button>
+
+                  </td>
              </tr>
             </>
         )
@@ -30,6 +39,9 @@ const CartData=()=>{
     return(
         <>
           <h1> Our Cart Data</h1>
+<h1 align="center" > Total Amount :{TotalAmount} </h1>
+  <Button variant="warning"  onClick={()=>{navigate("/checkout")}} >Checkout</Button>
+
            <Table striped bordered hover>
       <thead>
         <tr>
@@ -40,11 +52,20 @@ const CartData=()=>{
           <th>Price</th>
           <th> Quantity</th>
           <th> Total Price</th>
+          <th></th>
          
         </tr>
       </thead>
       <tbody>
-         {ans}
+            {ans} 
+
+         <tr>
+         
+          <th colSpan="6">  <b>Total Amount</b> </th>                
+          <th>  {TotalAmount}  </th>
+          <th> </th>
+          
+          </tr>
       </tbody>
       </Table>
         </>

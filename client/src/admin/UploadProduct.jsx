@@ -15,8 +15,6 @@ const UploadProduct=()=>{
   const [input,setInput]=useState({})
   const [selectedImage,setSelectedImage]=useState("")
 
-
-
 const handleInput=(e)=>{
   let name=e.target.name;
   let value=e.target.value;

@@ -6,6 +6,15 @@ const homeDisplay=async(req, res)=>{
     res.status(200).send(Product);
 }
 
+
+const ProductDisplay=async(req, res)=>{
+    const {id} = req.query;
+    const Product= await ProductModel.findById(id); 
+    res.status(200).send(Product);
+}
+
+
 module.exports={
-    homeDisplay
+    homeDisplay,
+    ProductDisplay
 }
