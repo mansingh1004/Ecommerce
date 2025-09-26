@@ -1,32 +1,24 @@
 import { useState } from "react";
 
+const SearchProduct = () => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-
-const SearchProduct=()=>{
-
-
-     const [searchTerm, setSearchTerm] = useState("");
-
-
-   
-
-
-
+  // Example product list (replace with your real data)
+  const products = [
+    { id: 1, name: "Red Shirt", price: 299 },
+    { id: 2, name: "Blue Jeans", price: 799 },
+    { id: 3, name: "Black Shoes", price: 1299 },
+  ];
 
   const filteredProducts = products.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     item.price.toString().includes(searchTerm)
   );
 
-    return(
-        <>
-        <h1>search</h1>
-
-
-
-           <div className="App">
+  return (
+    <div className="App">
       <h2>🔍 Search Products by Name or Price</h2>
-      
+
       <input
         type="text"
         placeholder="Search by name or price..."
@@ -46,7 +38,7 @@ const SearchProduct=()=>{
           {filteredProducts.map((prod) => (
             <tr key={prod.id}>
               <td>{prod.name}</td>
-              <td>${prod.price}</td>
+              <td>₹{prod.price}</td>
             </tr>
           ))}
           {filteredProducts.length === 0 && (
@@ -57,13 +49,7 @@ const SearchProduct=()=>{
         </tbody>
       </table>
     </div>
-
-        
-        
-        </>
-    )
-}
-
-
+  );
+};
 
 export default SearchProduct;

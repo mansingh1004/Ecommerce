@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 
 const AdminDashboard=()=>{
 
+  
+
          function Sidebar() {
       return (
         <div className="sidebar">
@@ -11,7 +13,7 @@ const AdminDashboard=()=>{
 <Nav defaultActiveKey="/home" className="flex-column">
       <Nav.Link  as={Link} to="uploadproduct">UploadProduct</Nav.Link>
             <Nav.Link  as={Link} to="customerorder">Order</Nav.Link>
-
+<Nav.Link  as={Link} to="productchart">chart</Nav.Link>
   
     </Nav>
 

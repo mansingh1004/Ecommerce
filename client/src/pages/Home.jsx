@@ -10,7 +10,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from "react-router-dom";
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import { FaShoppingCart } from "react-icons/fa";
-import ban1 from "../images/ban1.jpeg"
+import ban1 from "../images/ban11.webp"
 import ban2 from "../images/ban2.jpg"
 import ban3 from "../images/ban3.webp"
 const Home=()=>{

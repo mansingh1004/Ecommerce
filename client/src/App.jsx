@@ -7,10 +7,11 @@ import UploadProduct from "./admin/UploadProduct";
 import CartData from "./CartData";
 import SignIn from "./pages/SignIn";
 import Registration from "./pages/Registration";
-import CheckOut from "./pages/CheckOut";
+import CheckOut from "./pages/CheckOut"; 
 import CustomerOrder from "./admin/CustomerOrder";
 import ProductDisplay from "./pages/ProductDisplay";
 import SearchProduct from "./pages/SearchProduct";
+import Productchart from "./admin/Productchart";
 const App=()=>{
   return(
     <>
@@ -28,6 +29,7 @@ const App=()=>{
 <Route path="checkout" element={<CheckOut/>}/>
 <Route path="productdisplay/:id" element={<ProductDisplay/>}/>
 <Route path="searchproduct" element={<SearchProduct/>}/>
+<Route path="productchart" element={<Productchart/>}/>
 
 </Route>
 
